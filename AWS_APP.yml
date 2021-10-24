@@ -9,12 +9,12 @@
   - name: Create a keypair
     ec2_key:
       name: newkey1
-      state: absent
+      #state: absent
 
   - name: Save private key
     copy:
       content: "{{ ec2_key.key.private_key }}"
-      dest: "~/.ssh/newket1.pem"
+      dest: "~/.ssh/newkey1.pem"
       mode: 0600
     when: ec2_key.changed
 
