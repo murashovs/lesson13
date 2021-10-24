@@ -9,6 +9,7 @@
   - name: Create a keypair
     ec2_key:
       name: newkey1
+      state: absent
 
   - name: Save private key
     copy:
