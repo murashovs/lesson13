@@ -9,7 +9,8 @@
   - name: Create a keypair
     ec2_key:
       name: newkey1
-    register: ec2_key_result
+      state: absent
+    #register: ec2_key_result
 
   - name: Save
     copy:
