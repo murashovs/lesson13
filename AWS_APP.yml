@@ -1,8 +1,14 @@
 ---
-- name: Create a keypair
-  ec2_key:
-    name: newkey1
 
-- name: Save private key
-  copy: content="{{ ec2_key_result.key.private_key }}" dest="~/.ssh/newket1.pem" mode=400
-  when: ec2_key_result.changed
+- name: install builder
+  hosts: local
+  become: yes
+
+  tasks:
+  - name: Create a keypair
+    ec2_key:
+      name: newkey1
+
+  - name: Save private key
+    copy: content="{{ ec2_key_result.key.private_key }}" dest="~/.ssh/newket1.pem" mode=400
+    when: ec2_key_result.changed
