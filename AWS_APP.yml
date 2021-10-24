@@ -3,6 +3,7 @@
 - name: install builder
   hosts: localhost
   become: yes
+  gather_facts: False
 
   tasks:
   - name: Create a keypair
