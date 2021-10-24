@@ -1,7 +1,7 @@
 ---
 
 - name: install builder
-  hosts: local
+  hosts: localhost
   become: yes
 
   tasks:
