@@ -6,7 +6,7 @@
   gather_facts: False
 
   tasks:
-    -
+
   - name: Create a keypair
     ec2_key:
       name: newkey1
