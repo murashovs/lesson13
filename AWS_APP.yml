@@ -1,6 +1,6 @@
 ---
 - name: Create a keypair
-  host: localhost
+  host: local
   ec2_key:
     name: newkey1
 
