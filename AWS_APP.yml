@@ -23,7 +23,7 @@
   - name: Create new security group
     ec2_group:
       name: group1
-      descrition: AWS_APP group
+      description: AWS_APP group
       region: eu-north-1
       rules:
         - proto: tcp
