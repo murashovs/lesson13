@@ -40,13 +40,13 @@
       wait: yes
       wait_timeout: 500
       count: 1
-    register: ec2-1
+    register: ec21
 
   - name: Add Build instance to host group
     add_host:
       hostname: "{{ item.public_ip }}"
       groupname: Builders
-    with_items: "{{ ec2-1.instances }}"
+    with_items: "{{ ec21.instances }}"
 
   - name: Create Prod nstance
     ec2:
@@ -57,13 +57,13 @@
       wait: yes
       wait_timeout: 500
       count: 1
-    register: ec2-2
+    register: ec22
 
   - name: Add Prod instance to host group
     add_host:
       hostname: "{{ item.public_ip }}"
       groupname: Prod
-    with_items: "{{ ec2-2.instances }}"
+    with_items: "{{ ec22.instances }}"
 
 
   - name: Wait for SSH to come up
