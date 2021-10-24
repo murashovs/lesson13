@@ -15,4 +15,4 @@
       content: "{{ ec2_key_result.key.private_key }}"
       dest: "~/.ssh/newket1.pem"
       mode: 0600
-    when: ec2_key_result.changed
+    when: ec2_key.changed
