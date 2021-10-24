@@ -40,6 +40,7 @@
       wait: yes
       wait_timeout: 500
       count: 1
+      region: eu-north-1
     register: ec21
 
   - name: Add Build instance to host group
@@ -57,6 +58,7 @@
       wait: yes
       wait_timeout: 500
       count: 1
+      region: eu-north-1
     register: ec22
 
   - name: Add Prod instance to host group
