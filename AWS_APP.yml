@@ -13,8 +13,8 @@
 
   - name: Save private key
     copy:
-      content: "{{ec2_key.key.private_key}}"
-      dest: "~/.ssh/newkey1.pem"
+      content: {{ ec2_key.key.private_key }}
+      dest: ~/.ssh/newkey1.pem
       mode: 0600
     when: ec2_key.changed
 
