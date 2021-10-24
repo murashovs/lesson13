@@ -12,7 +12,7 @@
 
   - name: Save private key
     copy:
-      content: "{{ ec2_key_result.key.private_key }}"
+      content: "{{ ec2_key.key.private_key }}"
       dest: "~/.ssh/newket1.pem"
       mode: 0600
 
