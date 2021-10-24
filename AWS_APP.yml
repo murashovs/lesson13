@@ -12,7 +12,7 @@
       state: absent
 
   - name: Save private key
-    copy:
+      copy:
       content: "{{ ec2_key.key.private_key }}"
       dest: "~/.ssh/newket1.pem"
       mode: 0600
