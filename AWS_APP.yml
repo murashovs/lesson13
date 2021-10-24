@@ -1,7 +1,7 @@
 ---
 
 - name: install builder
-  hosts: localhost
+  hosts: local
   become: yes
   gather_facts: False
 
