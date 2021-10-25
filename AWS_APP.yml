@@ -54,13 +54,16 @@
     with_items: "{{ ec21.instances }}"
 
 
-
-  - name: Wait for SSH to come up
-    delegate_to: "{{ item.public_dns_name }}"
+  - name: Wait for system to become reachable over WinRM
     wait_for_connection:
-      delay: 60
-      timeout: 320
-    with_items: "{{ ec21.instances }}"
+      timeout: 900
+
+ # - name: Wait for SSH to come up
+  #  delegate_to: "{{ item.public_dns_name }}"
+  # wait_for_connection:
+   #   delay: 60
+    #  timeout: 320
+   # with_items: "{{ ec21.instances }}"
 
 
 
