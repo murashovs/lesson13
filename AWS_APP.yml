@@ -16,7 +16,7 @@
   - name: Save
     copy:
       content: "{{ ec2_key_result.key.private_key }}"
-      dest: ~/.ssh/newkey1.pem
+      dest: /root/.ssh/newkey1.pem
       mode: 0600
     when: ec2_key_result.changed
 
@@ -50,30 +50,10 @@
       hostname: "{{ item.public_ip }}"
       groupname: Builders
       ansible_ssh_user: ubuntu
-      ansible_ssh_private_key_file: ~/.ssh/newkey1.pem
+      ansible_ssh_private_key_file: /root/.ssh/newkey1.pem
     with_items: "{{ ec21.instances }}"
 
 
-
-  - name: Create Prod nstance
-    ec2:
-      key_name: newkey1
-      instance_type: t3.micro
-      image: ami-0ff338189efb7ed37
-      group: group1
-      instance_tags:
-        name: Prod
-      wait: yes
-      wait_timeout: 500
-      count: 1
-      region: eu-north-1
-    register: ec22
-
-  - name: Add Prod instance to host group
-    add_host:
-      hostname: "{{ item.public_ip }}"
-      groupname: Prod
-    with_items: "{{ ec22.instances }}"
 
   - name: Wait for SSH to come up
     delegate_to: "{{ item.public_dns_name }}"
@@ -82,12 +62,7 @@
       timeout: 320
     with_items: "{{ ec21.instances }}"
 
-  - name: Wait for SSH to come up
-    delegate_to: "{{ item.public_dns_name }}"
-    wait_for_connection:
-      delay: 60
-      timeout: 320
-    with_items: "{{ ec22.instances }}"
+
 
 
 - name: Configure instances
