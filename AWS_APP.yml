@@ -79,10 +79,10 @@
 
   tasks:
 
-  - name: Ensure JDK is present
-    apt:
-      name: default-jdk
-      state: present
+ # - name: Ensure JDK is present
+  #  apt:
+   #   name: default-jdk
+    #  state: present
 
   - name: Ensure MAVEN is present
     apt:
