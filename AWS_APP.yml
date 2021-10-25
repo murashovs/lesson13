@@ -48,7 +48,7 @@
   - name: Add Build instance to host group
     add_host:
       hostname: "{{ item.public_ip }}"
-      groupname: Builders
+      groups: Builders
       ansible_ssh_user: ubuntu
       ansible_ssh_private_key_file: /root/.ssh/newkey1.pem
     with_items: "{{ ec21.instances }}"
