@@ -2,7 +2,7 @@
 
 - name: install builder
   hosts: local
-  become: yes
+ № become: yes
   gather_facts: False
 
   tasks:
@@ -55,9 +55,12 @@
     with_items: "{{ ec21.instances }}"
 
 
-  - name: Wait for system to become reachable over WinRM
-    wait_for_connection:
-      timeout: 900
+  - name: Wait for SSH to come up
+    local_action: wait_for
+                host={{ item.public_ip }}
+                port=22
+                state=started
+    with_items: "{{ ec21.instances }}"
 
  # - name: Wait for SSH to come up
   #  delegate_to: "{{ item.public_dns_name }}"
