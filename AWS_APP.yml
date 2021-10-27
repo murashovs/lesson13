@@ -2,6 +2,7 @@
 
 - name: install builder
   hosts: localhost
+  connection: local
  # become: yes
   gather_facts: False
 
