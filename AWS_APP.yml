@@ -40,6 +40,7 @@
       image: ami-09e67e426f25ce0d7
       instance_tags:
         name: Builder
+      group: group1
       wait: yes
       wait_timeout: 500
       count: 1
