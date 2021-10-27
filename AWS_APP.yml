@@ -33,7 +33,7 @@
           cidr_ip: 0.0.0.0/0
 
   - name: Create Build nstance
-    aws_ec2:
+    ec2:
       key_name: newkey1
       instance_type: t3.micro
       image: ami-0ff338189efb7ed37
