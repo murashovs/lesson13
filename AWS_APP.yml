@@ -37,7 +37,7 @@
     ec2:
       key_name: newkey1
       instance_type: t3.micro
-      image: ami-0d382e80be7ffdae5
+      image: ami-09e67e426f25ce0d7
       instance_tags:
         name: Builder
       wait: yes
