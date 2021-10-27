@@ -38,7 +38,9 @@
       key_name: newkey1
       instance_type: t3.micro
       image: ami-0ff338189efb7ed37
-      group: ser
+      instance_tags:
+        name: Builder
+
       wait: yes
       wait_timeout: 500
       count: 1
