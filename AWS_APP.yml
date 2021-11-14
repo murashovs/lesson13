@@ -11,7 +11,7 @@
   - name: Create a keypair
     ec2_key:
       name: newkey1
-      region: us-east-1
+      region: eu-north-1
       #state: absent
     register: ec2_key_result
 
@@ -26,7 +26,7 @@
     ec2_group:
       name: group1
       description: AWS_APP group
-      region: us-east-1
+      region: eu-north-1
       rules:
         - proto: tcp
           ports:
@@ -44,7 +44,7 @@
       wait: yes
       wait_timeout: 500
       count: 1
-      region: us-east-1
+      region: eu-north-1
     register: ec21
 
   - name: Add Build instance to host group
