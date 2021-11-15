@@ -42,7 +42,7 @@
         name: Builder
       security_group: group1
       wait: yes
-      wait_timeout: 500
+      # wait_timeout: 180
      # count: 1
       region: eu-north-1
     register: ec21
