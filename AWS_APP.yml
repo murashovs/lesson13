@@ -37,7 +37,7 @@
     ec2_instance:
       key_name: newkey1
       instance_type: t3.micro
-      image: ami-0bd9c26722573e69b
+      image_id: ami-0bd9c26722573e69b
       tags:
         name: Builder
       security_group: group1
